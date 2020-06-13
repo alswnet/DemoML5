@@ -5,7 +5,6 @@ var BotonesEntrenar;
 var knn;
 var modelo;
 var Clasificando = false;
-var dato;
 
 function setup() {
   var ObtenerCanva = document.getElementById('micanva');
@@ -40,7 +39,7 @@ function setup() {
 
 function draw() {
 
-  image(Camara, 0, 0, width * Camara.width / Camara.height, width);
+  image(Camara, 0, 0, width, width * Camara.height / Camara.width);
 
   if (knn.getNumLabels() > 0 && !Clasificando) {
     setInterval(clasificar, 500);
@@ -89,8 +88,6 @@ function clasificar() {
             Indice = i;
           }
         }
-
-        dato = result;
         CartaMensaje.innerText = Etiquetas[Indice] + " - " + (Math.ceil(Valores[Indice] * 100)) + "%";
       }
     })
