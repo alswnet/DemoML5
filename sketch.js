@@ -95,7 +95,7 @@ function clasificar() {
         console.log("Error en clasificar");
         console.error();
       } else {
-        console.log(result);
+        // console.log(result);
         var Etiqueta;
         var Confianza;
         if (!CargandoNeurona) {
